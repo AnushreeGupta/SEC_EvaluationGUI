@@ -1,5 +1,3 @@
-package my_package;
-
 import static java.lang.Math.random;
 import java.util.*;
 //import static java.util.Collections.list;
@@ -834,7 +832,8 @@ public class DataPage extends javax.swing.JFrame {
         marks[6][0]=Integer.parseInt((String) marks71.getSelectedItem());marks[6][1]=Integer.parseInt((String) marks72.getSelectedItem());marks[6][2]=Integer.parseInt((String) marks73.getSelectedItem());
         return marks;
     }
-    private double[] calculateNormalizedMarks(int[][] marks,int numberOfTeamMembers)
+    
+    public double[] calculateNormalizedMarks(int[][] marks,int numberOfTeamMembers)
     {
         double[] normMarks = new double[numberOfTeamMembers];
         double[] totalMarksPerMember = new double[numberOfTeamMembers];

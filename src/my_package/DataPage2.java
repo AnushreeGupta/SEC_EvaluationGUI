@@ -1,5 +1,3 @@
-package my_package;
-
 import java.util.*;
 //import static java.util.Collections.list;
 //import static java.util.Collections.list;

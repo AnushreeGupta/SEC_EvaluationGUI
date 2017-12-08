@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package my_package;
 
 import javax.swing.JOptionPane;
 
@@ -137,7 +136,7 @@ public class myFirstForm extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Welcome to your Self and Peer Evaluation Application");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my_package/Webp.net-resizeimage.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("bullslogo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
