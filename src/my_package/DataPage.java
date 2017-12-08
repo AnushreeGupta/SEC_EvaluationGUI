@@ -1,32 +1,13 @@
-import static java.lang.Math.random;
+package my_package;
+
+import static java.lang.Double.NaN;
 import java.util.*;
-//import static java.util.Collections.list;
-//import static java.util.Collections.list;
-//import java.util.HashMap;
-//import java.util.List;
-//import java.util.Map;
-import javax.swing.JLabel;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javax.swing.JOptionPane;
-//import static jdk.nashorn.internal.objects.NativeArray.map;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Ajay-Pc
- */
 public class DataPage extends javax.swing.JFrame {
 
-    /**
-     * Creates new form DataPage2
-     */
-    //int iter = 1;
     String inp;
-    //int numberOfTeamMembers;
     int count=0;
     Map<String,List<Integer>> map = new HashMap<>();
     List<String> teamMembers = new ArrayList<>();
@@ -42,18 +23,19 @@ public class DataPage extends javax.swing.JFrame {
         int numberOfTeamMembers = teammembers;
         randomData = generateData();
         System.out.println("Random Data = " + randomData);
-        teamMembers.add("Britney Spears");
-        teamMembers.add("Rihanna");
-        teamMembers.add("Lady Gaga");
-        teamMembers.add("Katy Perry");
-        teamMembers.add("Arianna Grande");
-        teamMembers.add("Miley Cyrus");
-        teamMembers.add("Selena Gomez");
+        teamMembers.add("Batman");
+        teamMembers.add("Deadpool");
+        teamMembers.add("Iron Man");
+        teamMembers.add("Captain America");
+        teamMembers.add("Superman");
+        teamMembers.add("The Incredible Hulk");
+        teamMembers.add("Wonder Woman");
         for(int i=0;i<numberOfTeamMembers;i++)
         {
             map.put(teamMembers.get(i),randomData.get(i));
         }
         initComponents();
+        this.setTitle("Self and Peer Evaluation Marks");
         messageLabel.setText("Number of Team Mates = "+numberOfTeamMembers);
         resultPanel.setVisible(false);
         setVisibleMembers(numberOfTeamMembers);
@@ -116,7 +98,6 @@ public class DataPage extends javax.swing.JFrame {
               prevMarks.add(new Random().nextInt(6));
             data.add(prevMarks);
           }    
-        //System.out.println("Random data generated = "+data);
         return data;
       }
       private void setPrevData()
@@ -198,7 +179,6 @@ public class DataPage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         messageLabel = new javax.swing.JLabel();
         titleLabel = new javax.swing.JLabel();
-        infoLabel = new javax.swing.JLabel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -237,6 +217,11 @@ public class DataPage extends javax.swing.JFrame {
 
         marks11.setVisible(false);
         marks11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3","4","5" }));
+        marks11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                marks11ActionPerformed(evt);
+            }
+        });
 
         nameLabel.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         nameLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -615,58 +600,55 @@ public class DataPage extends javax.swing.JFrame {
             resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(resultPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addGroup(resultPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, resultPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, resultPanelLayout.createSequentialGroup()
-                                .addComponent(name7, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(resultPanelLayout.createSequentialGroup()
+                        .addComponent(name2, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(m2, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
+                    .addGroup(resultPanelLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addGroup(resultPanelLayout.createSequentialGroup()
+                                .addComponent(name5, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                                 .addGap(6, 6, 6)
-                                .addComponent(m7, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, resultPanelLayout.createSequentialGroup()
-                                .addComponent(name6, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m5, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
+                            .addGroup(resultPanelLayout.createSequentialGroup()
+                                .addComponent(name7, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                                 .addGap(6, 6, 6)
-                                .addComponent(m6, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, resultPanelLayout.createSequentialGroup()
-                                .addComponent(name5, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m7, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
+                            .addGroup(resultPanelLayout.createSequentialGroup()
+                                .addComponent(name1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                                 .addGap(6, 6, 6)
-                                .addComponent(m5, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, resultPanelLayout.createSequentialGroup()
-                                .addComponent(name4, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
+                            .addGroup(resultPanelLayout.createSequentialGroup()
+                                .addComponent(name4, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                                 .addGap(6, 6, 6)
-                                .addComponent(m4, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, resultPanelLayout.createSequentialGroup()
-                                .addComponent(name3, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m4, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
+                            .addGroup(resultPanelLayout.createSequentialGroup()
+                                .addComponent(name3, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(m3, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, resultPanelLayout.createSequentialGroup()
-                                .addComponent(name2, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(m2, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, resultPanelLayout.createSequentialGroup()
-                                .addComponent(name1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(m3, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
+                            .addGroup(resultPanelLayout.createSequentialGroup()
+                                .addComponent(name6, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                                 .addGap(6, 6, 6)
-                                .addComponent(m1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(m6, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))))))
         );
-
-        resultPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel3, jLabel4, m1, m2, m3, m4, m5, m6, m7, name1, name3, name4, name5, name6, name7});
-
         resultPanelLayout.setVerticalGroup(
             resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(resultPanelLayout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(name1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name1)
                     .addComponent(m1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(resultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -721,25 +703,16 @@ public class DataPage extends javax.swing.JFrame {
         titleLabel.setForeground(new java.awt.Color(102, 51, 0));
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         if(prevData)
-        titleLabel.setText("Fetching previous submission...");
+        titleLabel.setText("Update Self and Peer Evaluation Marks");
         else
-        titleLabel.setText("Enter Self and Peer Evaluation");
-
-        infoLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        infoLabel.setForeground(new java.awt.Color(0, 102, 102));
-        infoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        if(prevData)
-        infoLabel.setText("Update Marks for Teammates" );
-        else
-        infoLabel.setText("Enter Marks for Teammates ");
+        titleLabel.setText("Enter Self and Peer Evaluation Marks");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titleLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(titleLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE)
             .addComponent(messageLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(infoLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -748,9 +721,7 @@ public class DataPage extends javax.swing.JFrame {
                 .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(messageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(71, 71, 71))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -843,30 +814,40 @@ public class DataPage extends javax.swing.JFrame {
             totalMarksPerMember[i]=marks[i][0]+marks[i][1]+marks[i][2];
             maxScoresForTeam +=totalMarksPerMember[i];
         }
-        
+        if(maxScoresForTeam==0)
+        {
+            System.out.println("Team score = 0");
+            return new double[numberOfTeamMembers];
+        }
         for(int i=0;i<numberOfTeamMembers;i++)
             normMarks[i]=(double)(totalMarksPerMember[i]/maxScoresForTeam);
-        
-            
-
-            for(int i=0;i<numberOfTeamMembers;i++)
-            {
-                System.out.println("Marks for "+map.get(teamMembers.get(i))+" ="+normMarks[i]);
-            }
+        for(int i=0;i<numberOfTeamMembers;i++)
+         {
+             System.out.println("Marks for "+map.get(teamMembers.get(i))+" ="+normMarks[i]);
+         }
         return normMarks;
     }
     private void calculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateButtonActionPerformed
 
         int numberOfTeamMembers = map.keySet().size();
-        int[][] marks = getMarks();
-        inputPanel.setVisible(false);
-        jPanel1.setVisible(false);
-        resultPanel.setVisible(true);
-        
-        double[] normalizedMarks = calculateNormalizedMarks(marks,numberOfTeamMembers);
-        
-        
-        setVisibilityOfResults(normalizedMarks,numberOfTeamMembers);
+        double[] normalizedMarks = calculateNormalizedMarks(getMarks(),numberOfTeamMembers);
+        double totalMarks=0;
+        for(int i=0;i<numberOfTeamMembers;i++)
+        {
+            totalMarks += normalizedMarks[i];
+        }
+        if(totalMarks==0)
+        {
+            System.out.println("Entered NULL");
+            JOptionPane.showMessageDialog(null,"All Fields Cannot Be Zero! \nPlease Enter Non-Zero Evaluation.");
+        }
+        else
+        {
+            setVisibilityOfResults(normalizedMarks,numberOfTeamMembers);
+            inputPanel.setVisible(false);
+            jPanel1.setVisible(false);
+            resultPanel.setVisible(true);
+        }
     }//GEN-LAST:event_calculateButtonActionPerformed
 
     private void marks13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marks13ActionPerformed
@@ -925,34 +906,11 @@ public class DataPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_marks72ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DataPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DataPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DataPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DataPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void marks11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marks11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_marks11ActionPerformed
 
-        /* Create and display the form */
+    public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new DataPage().setVisible(true);
@@ -963,7 +921,6 @@ public class DataPage extends javax.swing.JFrame {
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton calculateButton;
-    private javax.swing.JLabel infoLabel;
     private javax.swing.JPanel inputPanel;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;

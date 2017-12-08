@@ -285,6 +285,9 @@
                   <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;,&quot;4&quot;,&quot;5&quot; })" type="code"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="marks11ActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="marks11.setVisible(false);"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -702,54 +705,54 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel3" linkSize="1" min="-2" pref="308" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabel4" linkSize="1" min="-2" pref="301" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Group type="102" alignment="2" attributes="0">
+                              <Component id="jLabel3" pref="333" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Component id="jLabel4" pref="333" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel1" alignment="2" max="32767" attributes="0"/>
+                          <Group type="102" alignment="2" attributes="0">
+                              <Component id="name2" pref="339" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Component id="m2" pref="333" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="2" attributes="0">
                                   <Group type="102" alignment="2" attributes="0">
-                                      <Component id="name7" linkSize="1" min="-2" pref="333" max="-2" attributes="0"/>
+                                      <Component id="name5" pref="333" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                      <Component id="m7" linkSize="1" min="-2" pref="276" max="-2" attributes="0"/>
+                                      <Component id="m5" pref="333" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="2" attributes="0">
-                                      <Component id="name6" linkSize="1" min="-2" pref="333" max="-2" attributes="0"/>
+                                      <Component id="name7" pref="333" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                      <Component id="m6" linkSize="1" min="-2" pref="276" max="-2" attributes="0"/>
+                                      <Component id="m7" pref="333" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="2" attributes="0">
-                                      <Component id="name5" linkSize="1" min="-2" pref="333" max="-2" attributes="0"/>
+                                      <Component id="name1" pref="333" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                      <Component id="m5" linkSize="1" min="-2" pref="276" max="-2" attributes="0"/>
+                                      <Component id="m1" pref="333" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="2" attributes="0">
-                                      <Component id="name4" linkSize="1" min="-2" pref="333" max="-2" attributes="0"/>
+                                      <Component id="name4" pref="333" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                      <Component id="m4" linkSize="1" min="-2" pref="276" max="-2" attributes="0"/>
+                                      <Component id="m4" pref="333" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="2" attributes="0">
-                                      <Component id="name3" linkSize="1" min="-2" pref="333" max="-2" attributes="0"/>
+                                      <Component id="name3" pref="333" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Component id="m3" linkSize="1" min="-2" pref="276" max="-2" attributes="0"/>
+                                      <Component id="m3" pref="333" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="2" attributes="0">
-                                      <Component id="name2" min="-2" pref="339" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="m2" linkSize="1" min="-2" pref="279" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="2" attributes="0">
-                                      <Component id="name1" linkSize="1" min="-2" pref="333" max="-2" attributes="0"/>
-                                      <EmptySpace min="6" pref="6" max="6" attributes="0"/>
-                                      <Component id="m1" linkSize="1" min="-2" pref="276" max="-2" attributes="0"/>
+                                      <Component id="name6" pref="333" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                      <Component id="m6" pref="333" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -760,12 +763,12 @@
                       <Component id="jLabel1" min="-2" pref="45" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel3" alignment="3" max="32767" attributes="0"/>
-                          <Component id="jLabel4" alignment="3" max="32767" attributes="0"/>
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="name1" alignment="3" max="32767" attributes="0"/>
+                          <Component id="name1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="m1" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -1018,9 +1021,8 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="titleLabel" alignment="1" max="32767" attributes="0"/>
+              <Component id="titleLabel" alignment="1" pref="698" max="32767" attributes="0"/>
               <Component id="messageLabel" alignment="1" max="32767" attributes="0"/>
-              <Component id="infoLabel" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -1030,9 +1032,7 @@
                   <Component id="titleLabel" min="-2" pref="38" max="-2" attributes="0"/>
                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                   <Component id="messageLabel" min="-2" pref="20" max="-2" attributes="0"/>
-                  <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                  <Component id="infoLabel" min="-2" pref="20" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -1059,28 +1059,11 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0" postCode="if(prevData)"/>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;Fetching previous submission...&quot;" type="code"/>
+              <Connection code="&quot;Update Self and Peer Evaluation Marks&quot;" type="code"/>
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="else&#xa;titleLabel.setText(&quot;Enter Self and Peer Evaluation&quot;);"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JLabel" name="infoLabel">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="0" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0" postCode="if(prevData)"/>
-            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;Update Marks for Teammates&quot; " type="code"/>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="else&#xa;infoLabel.setText(&quot;Enter Marks for Teammates &quot;);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="else&#xa;titleLabel.setText(&quot;Enter Self and Peer Evaluation Marks&quot;);"/>
           </AuxValues>
         </Component>
       </SubComponents>
