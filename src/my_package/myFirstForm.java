@@ -98,9 +98,9 @@ public class myFirstForm extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Enter Number of Team Members");
+        jLabel1.setText("Select Number of Team Members");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teams of 2", "Teams of 3", "Teams of 4","Teams of 5","Teams of 6","Teams of 7" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3", "4","5","6","7" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -190,8 +190,8 @@ public class myFirstForm extends javax.swing.JFrame {
     {
         String selected = (String)jComboBox1.getSelectedItem();
         System.out.println("Selected = "+selected);
-        System.out.println("String = "+selected.substring(selected.length()-1));
-        int number = Integer.parseInt(selected.substring(selected.length()-1));
+        //System.out.println("String = "+selected.substring(selected.length()-1));
+        int number = Integer.parseInt(selected);
         System.out.println("Number = "+number);
         return number;
     }
@@ -218,11 +218,7 @@ public class myFirstForm extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         
-//        String selected = (String)jComboBox1.getSelectedItem();
-//        System.out.println("Selected = "+selected);
-//        number = Integer.parseInt(selected.substring(selected.length()-2,selected.length()-1));
-//        System.out.println("Number = "+number);
-        //number = 
+
 // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 

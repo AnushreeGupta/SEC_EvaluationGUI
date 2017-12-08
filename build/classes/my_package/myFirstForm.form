@@ -164,13 +164,13 @@
               <Color blue="33" green="33" red="0" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Enter Number of Team Members"/>
+            <Property name="text" type="java.lang.String" value="Select Number of Team Members"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="jComboBox1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Teams of 2&quot;, &quot;Teams of 3&quot;, &quot;Teams of 4&quot;,&quot;Teams of 5&quot;,&quot;Teams of 6&quot;,&quot;Teams of 7&quot; })" type="code"/>
+              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;2&quot;, &quot;3&quot;, &quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot; })" type="code"/>
             </Property>
           </Properties>
           <Events>

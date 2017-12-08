@@ -26,9 +26,9 @@ public class DataPage extends javax.swing.JFrame {
     /**
      * Creates new form DataPage2
      */
-    int iter = 1;
+    //int iter = 1;
     String inp;
-    int numberOfTeamMembers;
+    //int numberOfTeamMembers;
     int count=0;
     Map<String,List<Integer>> map = new HashMap<>();
     List<String> teamMembers = new ArrayList<>();
@@ -39,17 +39,29 @@ public class DataPage extends javax.swing.JFrame {
     public DataPage() {
         initComponents();
     }
-
-      public void addToPanel()
-    {
-        JLabel test = new JLabel();
-        test.setVisible(true);
-        test.setText("bLAH");
-        inputPanel.add(test);
-        test.setVisible(true);
-        inputPanel.revalidate();
-        inputPanel.repaint();
-    }
+    DataPage(int teammembers,boolean f) {
+        prevData = f;
+        int numberOfTeamMembers = teammembers;
+        randomData = generateData();
+        System.out.println("Random Data = " + randomData);
+        teamMembers.add("Britney Spears");
+        teamMembers.add("Rihanna");
+        teamMembers.add("Lady Gaga");
+        teamMembers.add("Katy Perry");
+        teamMembers.add("Arianna Grande");
+        teamMembers.add("Miley Cyrus");
+        teamMembers.add("Selena Gomez");
+        for(int i=0;i<numberOfTeamMembers;i++)
+        {
+            map.put(teamMembers.get(i),randomData.get(i));
+        }
+        initComponents();
+        messageLabel.setText("Number of Team Mates = "+numberOfTeamMembers);
+        resultPanel.setVisible(false);
+        setVisibleMembers(numberOfTeamMembers);
+        if(prevData)
+            setPrevData();
+    }     
       private void setVisible2(){
         teamMember1.setVisible(true);teamMember2.setVisible(true);
         marks11.setVisible(true);marks12.setVisible(true);marks13.setVisible(true);
@@ -71,7 +83,7 @@ public class DataPage extends javax.swing.JFrame {
         teamMember7.setVisible(true);marks71.setVisible(true);marks72.setVisible(true);marks73.setVisible(true);
       }
 
-      private void setVisibleMembers()
+      private void setVisibleMembers(int numberOfTeamMembers)
       {
           switch(numberOfTeamMembers)
            {
@@ -119,28 +131,7 @@ public class DataPage extends javax.swing.JFrame {
         marks61.setSelectedItem(String.valueOf(randomData.get(5).get(0)));marks62.setSelectedItem(String.valueOf(randomData.get(5).get(1)));marks63.setSelectedItem(String.valueOf(randomData.get(5).get(2)));
         marks71.setSelectedItem(String.valueOf(randomData.get(6).get(0)));marks72.setSelectedItem(String.valueOf(randomData.get(6).get(1)));marks73.setSelectedItem(String.valueOf(randomData.get(6).get(2))); 
       }
-    DataPage(int teammembers,boolean f) {
-        prevData = f;
-        numberOfTeamMembers = teammembers;
-        randomData = generateData();
-        System.out.println("Random Data = " + randomData);
-        teamMembers.add("Britney Spears");
-        teamMembers.add("Rihanna");
-        teamMembers.add("Lady Gaga");
-        teamMembers.add("Katy Perry");
-        teamMembers.add("Arianna Grande");
-        teamMembers.add("Miley Cyrus");
-        teamMembers.add("Selena Gomez");
-        for(int i=0;i<numberOfTeamMembers;i++)
-        {
-            map.put(teamMembers.get(i),randomData.get(i));
-        }
-        initComponents();
-        resultPanel.setVisible(false);
-        setVisibleMembers();
-        if(prevData)
-            setPrevData();
-    }
+    
     
     
     /**
@@ -727,7 +718,6 @@ public class DataPage extends javax.swing.JFrame {
         messageLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         messageLabel.setForeground(new java.awt.Color(0, 102, 102));
         messageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        messageLabel.setText("Number of Team Mates = "+numberOfTeamMembers);
 
         titleLabel.setFont(new java.awt.Font("Sitka Display", 1, 36)); // NOI18N
         titleLabel.setForeground(new java.awt.Color(102, 51, 0));
@@ -789,12 +779,12 @@ public class DataPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void setVisibilityOfResults(double[] marks)
+    private void setVisibilityOfResults(double[] marks,int numberOfTeamMembers)
     {
         name1.setText(teamMembers.get(0));name7.setText(teamMembers.get(6));name6.setText(teamMembers.get(5));
         name2.setText(teamMembers.get(1));name4.setText(teamMembers.get(3));
         name3.setText(teamMembers.get(2));name5.setText(teamMembers.get(4));
-        setVisibleResultMembers(marks);
+        setVisibleResultMembers(marks,numberOfTeamMembers);
     }
     private void set3False(){ name3.setVisible(false);m3.setVisible(false); }
     private void set4False(){ name4.setVisible(false);m4.setVisible(false); }
@@ -802,7 +792,7 @@ public class DataPage extends javax.swing.JFrame {
     private void set6False(){ name6.setVisible(false);m6.setVisible(false); }
     private void set7False(){ name7.setVisible(false);m7.setVisible(false); }
 
-      private void setVisibleResultMembers(double[] marks)
+      private void setVisibleResultMembers(double[] marks,int numberOfTeamMembers)
       {
           switch(numberOfTeamMembers)
            {
@@ -831,10 +821,7 @@ public class DataPage extends javax.swing.JFrame {
                    break;
           }
       }
-    private void displayResults(double[] marks)
-    {
-        setVisibilityOfResults(marks);
-    }
+    
     private int[][] getMarks()
     {
         int[][] marks = new int[7][3];
@@ -847,43 +834,40 @@ public class DataPage extends javax.swing.JFrame {
         marks[6][0]=Integer.parseInt((String) marks71.getSelectedItem());marks[6][1]=Integer.parseInt((String) marks72.getSelectedItem());marks[6][2]=Integer.parseInt((String) marks73.getSelectedItem());
         return marks;
     }
-    private double[] calculateNormalizedMarks(int[][] marks)
+    private double[] calculateNormalizedMarks(int[][] marks,int numberOfTeamMembers)
     {
         double[] normMarks = new double[numberOfTeamMembers];
         double[] totalMarksPerMember = new double[numberOfTeamMembers];
         double maxScoresForTeam = 0.0;
         for(int i=0;i<numberOfTeamMembers;i++)
+        {
             totalMarksPerMember[i]=marks[i][0]+marks[i][1]+marks[i][2];
-        for(int i=0;i<numberOfTeamMembers;i++)
             maxScoresForTeam +=totalMarksPerMember[i];
-        double[] fraction = new double[numberOfTeamMembers];
-        double totalFraction = 0.0;
+        }
+        
         for(int i=0;i<numberOfTeamMembers;i++)
-            fraction[i]=totalMarksPerMember[i]/15.00;
-        for(int i=0;i<numberOfTeamMembers;i++)
-            totalFraction += fraction[i];
+            normMarks[i]=(double)(totalMarksPerMember[i]/maxScoresForTeam);
+        
             
-        for(int i=0;i<numberOfTeamMembers;i++)
-            normMarks[i]=(double)(fraction[i]/totalFraction);
-        System.out.println("Norm Marks = ");
-            StringBuilder sb2 = new StringBuilder();
 
             for(int i=0;i<numberOfTeamMembers;i++)
             {
-                sb2.append(normMarks[i]+"\n");
                 System.out.println("Marks for "+map.get(teamMembers.get(i))+" ="+normMarks[i]);
             }
         return normMarks;
     }
     private void calculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateButtonActionPerformed
 
+        int numberOfTeamMembers = map.keySet().size();
         int[][] marks = getMarks();
         inputPanel.setVisible(false);
         jPanel1.setVisible(false);
         resultPanel.setVisible(true);
         
-        double[] normalizedMarks = calculateNormalizedMarks(marks);
-        displayResults(normalizedMarks);
+        double[] normalizedMarks = calculateNormalizedMarks(marks,numberOfTeamMembers);
+        
+        
+        setVisibilityOfResults(normalizedMarks,numberOfTeamMembers);
     }//GEN-LAST:event_calculateButtonActionPerformed
 
     private void marks13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marks13ActionPerformed
