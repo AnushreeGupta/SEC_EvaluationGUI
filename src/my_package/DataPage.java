@@ -1,11 +1,23 @@
 import static java.lang.Math.random;
 import java.util.*;
+//import static java.util.Collections.list;
+//import static java.util.Collections.list;
+//import java.util.HashMap;
+//import java.util.List;
+//import java.util.Map;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+//import static jdk.nashorn.internal.objects.NativeArray.map;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
- * Code for the first screen of our application. 
- * 
+ *
+ * @author Ajay-Pc
  */
 public class DataPage extends javax.swing.JFrame {
 

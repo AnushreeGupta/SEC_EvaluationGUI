@@ -136,8 +136,7 @@ public class myFirstForm extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Welcome to your Self and Peer Evaluation Application");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my_package/Webp.net-resizeimage.png"))); // NOI18N
-        jLabel4.setName("GUIBullsLogo"); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("bullslogo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -156,7 +155,7 @@ public class myFirstForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(30, 30, 30))
         );
 
@@ -186,10 +185,11 @@ public class myFirstForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    public int getNumberOfTeams()
+    private int getNumberOfTeams()
     {
         String selected = (String)jComboBox1.getSelectedItem();
         System.out.println("Selected = "+selected);
+        //System.out.println("String = "+selected.substring(selected.length()-1));
         int number = Integer.parseInt(selected);
         System.out.println("Number = "+number);
         return number;
