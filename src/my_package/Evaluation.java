@@ -2,6 +2,12 @@ package my_package;
 
 import java.util.*;
 import javax.swing.JOptionPane;
+/****************************************************************************
+ * Name             : Evaluation 
+ * Description      : Class to accept input for peer and self Evaluation, 
+ *                    calculate Normalized Marks and Display Results.
+ ***************************************************************************/
+ 
 public class Evaluation extends javax.swing.JFrame {
 
     Map<String,List<Integer>> map = new HashMap<>();
@@ -11,11 +17,20 @@ public class Evaluation extends javax.swing.JFrame {
     public Evaluation() {
         initComponents();
     }
-    Evaluation(int teammembers,boolean f)
+/****************************************************************************
+ * Name             : Evaluation() 
+ *                   (Parameterized Constructor)
+ * Description      : Initialize class parameters and calls 
+ *                    initcomponents to create layout of the Evaluation Page
+ * Input parameters : Number of Team Members => 'teammembers',
+ *                    flag => 'f'
+ * Return Values    : N/A
+ ***************************************************************************/
+    Evaluation(int teammembers,boolean f)                                       //Parameterized Constructor
     {
-        prevData = f;
-        int numberOfTeamMembers = teammembers;
-        randomData = generateData();
+        prevData = f;                                                           //Flag to check if previous data present or not
+        int numberOfTeamMembers = teammembers;                                  //To keep a track of number of team members present
+        randomData = generateData();                                            //To generate previous evaluation data 
         teamMembers.add("Batman");
         teamMembers.add("Deadpool");
         teamMembers.add("Iron Man");
@@ -23,18 +38,28 @@ public class Evaluation extends javax.swing.JFrame {
         teamMembers.add("Superman");
         teamMembers.add("The Incredible Hulk");
         teamMembers.add("Wonder Woman");
-        for(int i=0;i<numberOfTeamMembers;i++)
+        for(int i=0;i<numberOfTeamMembers;i++)                                  //To add previous marks and list of team member names in the map
         {
             map.put(teamMembers.get(i),randomData.get(i));
         }
-        initComponents();
-        this.setTitle("Self and Peer Evaluation Marks");
-        messageLabel.setText("Number of Team Mates = "+numberOfTeamMembers);
-        resultPanel.setVisible(false);
-        setVisibleMembers(numberOfTeamMembers);
+        initComponents();                                                       //Function to create layout of Evaluation Page
+        this.setTitle("Self and Peer Evaluation Marks");                        //Sets the Title of the Window
+        messageLabel.setText("Number of Team Mates = "+numberOfTeamMembers);    //Sets the Message Label
+        resultPanel.setVisible(false);                                         
+        boolean success = setVisibleMembers(numberOfTeamMembers);               //Generate members depending on number of Team Members present
         if(prevData)
-            setPrevData();
+            setPrevData();                                                      //Set previous data depending on the flag
     }     
+    
+ /***************************************************************************
+ * Name             : setVisible2(),setVisible3(),setVisible4(),setVisible5(),
+ *                    setVisible6(),setVisible7() 
+ * Description      : Depending on number of Team Members sets required 
+ *                    labels (Team Member Name, Marks) as visible
+ * Input parameters : none
+ * Return Values    : void
+ ***************************************************************************/
+ 
       private void setVisible2(){
         teamMember1.setVisible(true);teamMember2.setVisible(true);
         marks11.setVisible(true);marks12.setVisible(true);marks13.setVisible(true);
@@ -56,7 +81,14 @@ public class Evaluation extends javax.swing.JFrame {
         teamMember7.setVisible(true);marks71.setVisible(true);marks72.setVisible(true);marks73.setVisible(true);
       }
 
-      private void setVisibleMembers(int numberOfTeamMembers)
+/***************************************************************************
+ * Name             : setVisibleMembers()
+ * Description      : Depending on number of Team Members sets required 
+ *                    calls appropriate setVisible function
+ * Input parameters : Number of Team Members => 'numberOfTeamMembers'
+ * Return Values    : true or false (boolean)
+ ***************************************************************************/
+      private boolean setVisibleMembers(int numberOfTeamMembers)
       {
           switch(numberOfTeamMembers)
            {
@@ -78,8 +110,17 @@ public class Evaluation extends javax.swing.JFrame {
                case 7:
                    setVisible2();setVisible3();setVisible3();setVisible4();setVisible5();setVisible6();setVisible7();
                    break;
+               default:
+                   return false;
           }
+          return true;
       }
+/***************************************************************************
+ * Name             : generateData()
+ * Description      : Random previous evaluation data is generated
+ * Input parameters : none
+ * Return Values    : Dummy list of Marks => 'List<List<Integer>>'
+ ***************************************************************************/
       private List<List<Integer>> generateData()
       {
           List<List<Integer>> data = new ArrayList<>();
@@ -93,6 +134,12 @@ public class Evaluation extends javax.swing.JFrame {
           }    
         return data;
       }
+/***************************************************************************
+ * Name             : setPrevData()
+ * Description      : Set previous data in all the fields (Name, Marks) 
+ * Input parameters : none
+ * Return Values    : void
+ ***************************************************************************/      
       private void setPrevData()
       {
         marks11.setSelectedItem(String.valueOf(randomData.get(0).get(0)));marks12.setSelectedItem(String.valueOf(randomData.get(0).get(1)));marks13.setSelectedItem(String.valueOf(randomData.get(0).get(2)));
@@ -103,8 +150,6 @@ public class Evaluation extends javax.swing.JFrame {
         marks61.setSelectedItem(String.valueOf(randomData.get(5).get(0)));marks62.setSelectedItem(String.valueOf(randomData.get(5).get(1)));marks63.setSelectedItem(String.valueOf(randomData.get(5).get(2)));
         marks71.setSelectedItem(String.valueOf(randomData.get(6).get(0)));marks72.setSelectedItem(String.valueOf(randomData.get(6).get(1)));marks73.setSelectedItem(String.valueOf(randomData.get(6).get(2))); 
       }
-    
-    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -735,22 +780,32 @@ public class Evaluation extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void setVisibilityOfResults(double[] marks,int numberOfTeamMembers)
-    {
-        name1.setText(teamMembers.get(0));name7.setText(teamMembers.get(6));name6.setText(teamMembers.get(5));
-        name2.setText(teamMembers.get(1));name4.setText(teamMembers.get(3));
-        name3.setText(teamMembers.get(2));name5.setText(teamMembers.get(4));
-        setVisibleResultMembers(marks,numberOfTeamMembers);
-    }
+/***************************************************************************
+ * Name             : set3False(),set4False(),set5False(),set6False(),
+ *                    set7False()
+ * Description      : Set the name and normalized marks to invisible
+ * Input parameters : none
+ * Return Values    : void
+ ***************************************************************************/     
     private void set3False(){ name3.setVisible(false);m3.setVisible(false); }
     private void set4False(){ name4.setVisible(false);m4.setVisible(false); }
     private void set5False(){ name5.setVisible(false);m5.setVisible(false); }
     private void set6False(){ name6.setVisible(false);m6.setVisible(false); }
     private void set7False(){ name7.setVisible(false);m7.setVisible(false); }
-
-      private void setVisibleResultMembers(double[] marks,int numberOfTeamMembers)
+/***************************************************************************
+ * Name             : setVisibilityOfResults()
+ * Description      : Depending on number of Team Members set names and 
+ *                    normalized marks in results panel
+ * Input parameters : List of Marks => 'marks',
+ *                    Number of Team Members => 'numberOfTeamMembers'
+ * Return Values    : void
+ ***************************************************************************/     
+ 
+      private void setVisibilityOfResults(double[] marks,int numberOfTeamMembers)
       {
+        name1.setText(teamMembers.get(0));name7.setText(teamMembers.get(6));name6.setText(teamMembers.get(5));
+        name2.setText(teamMembers.get(1));name4.setText(teamMembers.get(3));
+        name3.setText(teamMembers.get(2));name5.setText(teamMembers.get(4));
           switch(numberOfTeamMembers)
            {
                case 2:
@@ -778,7 +833,13 @@ public class Evaluation extends javax.swing.JFrame {
                    break;
           }
       }
-    
+/***************************************************************************
+ * Name             : getMarks()
+ * Description      : Fetch marks from the GUI (combo box) and store it 
+ *                    into 2D array for further use
+ * Input parameters : none
+ * Return Values    : Array of marks (2D array) => 'int[][] marks'
+ ***************************************************************************/    
     private int[][] getMarks()
     {
         int[][] marks = new int[7][3];
@@ -791,7 +852,14 @@ public class Evaluation extends javax.swing.JFrame {
         marks[6][0]=Integer.parseInt((String) marks71.getSelectedItem());marks[6][1]=Integer.parseInt((String) marks72.getSelectedItem());marks[6][2]=Integer.parseInt((String) marks73.getSelectedItem());
         return marks;
     }
-    
+/***************************************************************************
+ * Name             : calculateNormalizedMarks()
+ * Description      : Calculate the normalized score for specified number of 
+ *                    team members.
+ * Input parameters : 2-D Array of Marks => ' marks[][]',
+ *                    Number of Team Members => 'numberOfTeamMembers'
+ * Return Values    : Array of normalized marks => 'Double normMarks' 
+ ***************************************************************************/ 
     public double[] calculateNormalizedMarks(int[][] marks,int numberOfTeamMembers)
     {
         double[] normMarks = new double[numberOfTeamMembers];
@@ -810,28 +878,36 @@ public class Evaluation extends javax.swing.JFrame {
             normMarks[i]=(double)(totalMarksPerMember[i]/maxScoresForTeam);
         return normMarks;
     }
+/***************************************************************************
+ * Name             : calculateButtonActionPerformed()
+ * Description      : Triggers the Function to perform the normalization of the 
+ *                    scores and display the final result.
+ * Input parameters : Calculate button trigger => 'ActionEvent evt'
+ * Return Values    : void
+ ***************************************************************************/ 
     private void calculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateButtonActionPerformed
 
         int numberOfTeamMembers = map.keySet().size();
-        double[] normalizedMarks = calculateNormalizedMarks(getMarks(),numberOfTeamMembers);
+        double[] normalizedMarks = calculateNormalizedMarks(getMarks(),numberOfTeamMembers);   //Function call to normalization
         double totalMarks=0;
         for(int i=0;i<numberOfTeamMembers;i++)
         {
             totalMarks += normalizedMarks[i];
         }
+        
         if(totalMarks==0)
         {
             JOptionPane.showMessageDialog(null,"All Fields Cannot Be Zero! \nPlease Enter Non-Zero Evaluation.");
         }
         else
         {
-            setVisibilityOfResults(normalizedMarks,numberOfTeamMembers);
+            setVisibilityOfResults(normalizedMarks,numberOfTeamMembers);             
             inputPanel.setVisible(false);
             jPanel1.setVisible(false);
             resultPanel.setVisible(true);
         }
     }//GEN-LAST:event_calculateButtonActionPerformed
-
+   
     private void marks13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marks13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_marks13ActionPerformed
@@ -891,15 +967,6 @@ public class Evaluation extends javax.swing.JFrame {
     private void marks11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marks11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_marks11ActionPerformed
-
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Evaluation().setVisible(true);
-            }
-        });
-    }
-    
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton calculateButton;
